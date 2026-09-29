@@ -1,4 +1,4 @@
-{ flake, ... }:
+{ inputs, ... }:
 {
   programs.ssh = {
     enable = true;
@@ -12,7 +12,7 @@
         ControlPersist = "no";
         ForwardAgent = false;
         HashKnownHosts = false;
-        IdentityFile = flake.self.lib.user.sshPrivKey;
+        IdentityFile = inputs.self.data.profile.sshPrivKey;
         ServerAliveCountMax = 3;
         ServerAliveInterval = 0;
         UserKnownHostsFile = "~/.ssh/known_hosts";
