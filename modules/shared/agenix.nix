@@ -1,10 +1,10 @@
 {
-  flake,
+  inputs,
   pkgs,
   ...
 }:
 let
-  inherit (flake) self inputs;
+  inherit (inputs) self;
   inherit (pkgs.stdenv.hostPlatform) system;
   pkgs-agenix = inputs.agenix.packages.${system}.default;
 in
@@ -14,7 +14,7 @@ in
   environment.systemPackages = [ pkgs-agenix ];
 
   age = {
-    identityPaths = [ flake.self.lib.user.sshPrivKey ];
+    identityPaths = [ self.tree.data.profile.content.sshPrivKey ];
     secrets = {
       "mihomo.yaml".file = self + /secrets/mihomo.yaml.age;
 

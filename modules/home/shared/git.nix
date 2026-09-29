@@ -1,16 +1,16 @@
 {
-  flake,
+  inputs,
   pkgs,
   osConfig,
   ...
-}:
+}@args:
 {
   programs.git = {
     enable = true;
     lfs.enable = true;
     settings = {
-      user.name = flake.self.lib.user.name;
-      user.email = flake.self.lib.user.email;
+      user.name = inputs.self.tree.data.profile.content.name;
+      user.email = inputs.self.tree.data.profile.content.email;
       push.autoSetupRemote = true;
       protocol."https".allow = "always";
       init.defaultBranch = "main";
@@ -27,7 +27,7 @@
     };
     signing = {
       format = "ssh";
-      key = flake.self.lib.user.sshPubKey;
+      key = inputs.self.tree.data.profile.content.sshPubKey;
       signByDefault = true;
     };
   };
