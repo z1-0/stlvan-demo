@@ -12,7 +12,7 @@
         ControlPersist = "no";
         ForwardAgent = false;
         HashKnownHosts = false;
-        IdentityFile = inputs.self.data.profile.sshPrivKey;
+        IdentityFile = inputs.self.tree.data.profile.content.sshPrivKey;
         ServerAliveCountMax = 3;
         ServerAliveInterval = 0;
         UserKnownHostsFile = "~/.ssh/known_hosts";
