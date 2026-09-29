@@ -9,8 +9,8 @@
     enable = true;
     lfs.enable = true;
     settings = {
-      user.name = inputs.self.tree.data.profile.content.name;
-      user.email = inputs.self.tree.data.profile.content.email;
+      user.name = inputs.self.lib.rootTree.data.profile.content.name;
+      user.email = inputs.self.lib.rootTree.data.profile.content.email;
       push.autoSetupRemote = true;
       protocol."https".allow = "always";
       init.defaultBranch = "main";
@@ -27,7 +27,7 @@
     };
     signing = {
       format = "ssh";
-      key = inputs.self.tree.data.profile.content.sshPubKey;
+      key = inputs.self.lib.rootTree.data.profile.content.sshPubKey;
       signByDefault = true;
     };
   };

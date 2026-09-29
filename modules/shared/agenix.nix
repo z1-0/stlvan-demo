@@ -14,7 +14,7 @@ in
   environment.systemPackages = [ pkgs-agenix ];
 
   age = {
-    identityPaths = [ self.tree.data.profile.content.sshPrivKey ];
+    identityPaths = [ self.lib.rootTree.data.profile.content.sshPrivKey ];
     secrets = {
       "mihomo.yaml".file = self + /secrets/mihomo.yaml.age;
 
