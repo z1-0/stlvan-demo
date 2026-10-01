@@ -1,7 +1,7 @@
 {
-  pkgs,
-  flake,
+  inputs,
   osConfig,
+  pkgs,
   ...
 }:
 let
@@ -9,8 +9,8 @@ let
 in
 {
   imports = [
-    flake.inputs.skills.homeModules.default
-    flake.self.lib.modules.prompts
+    inputs.self.lib.rootTree.data.modules.prompts
+    inputs.skills.homeModules.default
   ];
 
   prompts.source = ./AGENTS.md;
