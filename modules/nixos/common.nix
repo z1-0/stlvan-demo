@@ -1,11 +1,10 @@
 {
-  config,
-  lib,
+  inputs,
   pkgs,
   ...
 }:
 let
-  inherit (lib) optional;
+  username = inputs.self.lib.rootTree.data.profile.content.name;
 in
 {
   i18n = {
@@ -38,21 +37,13 @@ in
     };
   };
 
-  # users = {
-  #   users.${flake.self.lib.user.name} = {
-  #     isNormalUser = true;
-  #     extraGroups = [
-  #       "wheel"
-  #       "kvm"
-  #       "audio"
-  #       "video"
-  #     ]
-  #     ++ (optional config.networking.networkmanager.enable "networkmanager")
-  #     ++ (optional config.services.displayManager.dms-greeter.enable "greeter")
-  #     ++ (optional config.virtualisation.libvirtd.enable "libvirtd")
-  #     ++ (optional config.virtualisation.podman.enable "podman");
-  #   };
-  # };
+  users.users.${username}.extraGroups = [
+    "wheel"
+    "audio"
+    "video"
+    "kvm"
+    "networkmanager"
+  ];
 
   services.envfs.enable = true;
 }

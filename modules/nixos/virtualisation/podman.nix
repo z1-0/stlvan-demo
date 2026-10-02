@@ -1,4 +1,10 @@
+{ inputs, ... }:
+let
+  username = inputs.self.lib.rootTree.data.profile.content.name;
+in
 {
+  users.groups.podman.members = [ username ];
+
   virtualisation = {
     podman = {
       enable = true;

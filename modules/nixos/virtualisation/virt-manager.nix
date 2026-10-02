@@ -1,6 +1,13 @@
-{ pkgs, ... }:
+{ inputs, pkgs, ... }:
+let
+  username = inputs.self.lib.rootTree.data.profile.content.name;
+in
 {
+  networking.firewall.trustedInterfaces = [ "virbr0" ];
+  users.groups.libvirtd.members = [ username ];
+
   programs.virt-manager.enable = true;
+
   environment = {
     shellAliases.win = "virsh -c qemu:///system start win && virt-viewer -c qemu:///system -f -w win";
 
@@ -21,6 +28,4 @@
       qemu.vhostUserPackages = [ pkgs.virtiofsd ];
     };
   };
-
-  networking.firewall.trustedInterfaces = [ "virbr0" ];
 }
