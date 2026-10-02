@@ -1,16 +1,10 @@
-{
-  config,
-  inputs,
-  modulesPath,
-  ...
-}:
+{ config, inputs, ... }:
 let
   inherit (inputs) nixos-hardware;
 in
 {
   imports = [
     inputs.self.lib.rootTree.data.modules.nixosHardware.content
-    # (modulesPath + "/installer/scan/not-detected.nix")
     (nixos-hardware + "/common/cpu/intel/tiger-lake")
     (nixos-hardware + "/common/gpu/nvidia/ampere")
     (nixos-hardware + "/common/gpu/nvidia/prime.nix")

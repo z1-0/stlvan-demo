@@ -1,4 +1,9 @@
+{ inputs, ... }:
 {
+  imports = [
+    (inputs.nixpkgs + "/nixos/modules/installer/scan/not-detected.nix")
+  ];
+
   boot = {
     kernelModules = [ "kvm-intel" ];
     loader = {
