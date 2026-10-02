@@ -1,9 +1,9 @@
 {
   inputs,
-  pkgs,
   osConfig,
+  pkgs,
   ...
-}@args:
+}:
 {
   programs.git = {
     enable = true;
@@ -16,6 +16,7 @@
       init.defaultBranch = "main";
       http.postBuffer = 1048575999;
       core.compression = -1;
+      core.editor = "nvim";
       url."https://github.com/".insteadOf = [
         "gh:"
         "github:"

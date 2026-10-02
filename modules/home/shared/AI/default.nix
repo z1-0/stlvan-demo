@@ -9,7 +9,7 @@ let
 in
 {
   imports = [
-    inputs.self.lib.rootTree.data.modules.prompts
+    inputs.self.lib.rootTree.data.modules.prompts.content
     inputs.skills.homeModules.default
   ];
 
@@ -36,7 +36,7 @@ in
       "multica-ai/andrej-karpathy-skills"
       "mvanhorn/last30days-skill"
       "orchestra-research/ai-research-skills"
-      "redfox-data/redfox-community"
+      # "redfox-data/redfox-community"
       "tavily-ai/skills"
       "upstash/context7"
       "vercel-labs/skills"
@@ -48,8 +48,8 @@ in
       bubblewrap
       ctx7
       firecrawl-cli
-      flake.inputs.workbuddy.packages.${system}.default
-      flake.self.packages.${system}.tavily-cli
+      inputs.workbuddy.packages.${system}.default
+      inputs.self.packages.${system}.tavily-cli
       opencode
       playwright-driver.browsers
       skills

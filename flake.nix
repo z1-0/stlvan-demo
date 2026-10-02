@@ -18,6 +18,9 @@
     nur.url = "github:nix-community/NUR";
     nur.inputs.nixpkgs.follows = "nixpkgs";
 
+    workbuddy.url = "github:YeFaDa/workbuddy-nix";
+    workbuddy.inputs.nixpkgs.follows = "nixpkgs";
+
     _.url = "github:z1-0/sylvan";
   };
 
