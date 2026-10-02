@@ -14,8 +14,6 @@
   };
 
   nix = {
-    nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
-
     extraOptions = ''
       !include ${config.age.secrets."nix-access-tokens".path}
     '';

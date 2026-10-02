@@ -1,7 +1,4 @@
 { pkgs, ... }:
-let
-  username = inputs.self.lib.rootTree.data.profile.content.name;
-in
 {
   programs.virt-manager.enable = true;
   environment = {
@@ -22,11 +19,6 @@ in
     libvirtd = {
       enable = true;
       qemu.vhostUserPackages = [ pkgs.virtiofsd ];
-    };
-    vmVariant.users.users = {
-      root.initialPassword = "root";
-      nixos.initialPassword = "nixos";
-      ${username}.initialPassword = username;
     };
   };
 
