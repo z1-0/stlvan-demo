@@ -1,0 +1,6 @@
+[
+  "alejandra"
+  "prettier"
+  "shfmt"
+  "stylua"
+]
