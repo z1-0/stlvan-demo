@@ -4,31 +4,31 @@
     nix-darwin.url = "github:nix-darwin/nix-darwin";
     home-manager.url = "github:nix-community/home-manager";
 
-    agenix.url = "github:ryantm/agenix";
-    agenix.inputs.nixpkgs.follows = "nixpkgs";
-
     nixos-hardware = {
       url = "github:NixOS/nixos-hardware";
       flake = false;
     };
 
-    noctalia.url = "github:noctalia-dev/noctalia";
-    umbriel.url = "github:noctalia-dev/umbriel";
-
-    nur.url = "github:nix-community/NUR";
-    nur.inputs.nixpkgs.follows = "nixpkgs";
-
-    hjem.url = "github:feel-co/hjem";
-    hjem.inputs.nixpkgs.follows = "nixpkgs";
-
-    treefmt-nix.url = "github:numtide/treefmt-nix";
-    treefmt-nix.inputs.nixpkgs.follows = "nixpkgs";
+    agenix.url = "github:ryantm/agenix";
+    agenix.inputs.nixpkgs.follows = "nixpkgs";
 
     git-hooks-nix.url = "github:cachix/git-hooks.nix";
     git-hooks-nix.inputs.nixpkgs.follows = "nixpkgs";
 
+    hjem.url = "github:feel-co/hjem";
+    hjem.inputs.nixpkgs.follows = "nixpkgs";
+
+    nur.url = "github:nix-community/NUR";
+    nur.inputs.nixpkgs.follows = "nixpkgs";
+
+    treefmt-nix.url = "github:numtide/treefmt-nix";
+    treefmt-nix.inputs.nixpkgs.follows = "nixpkgs";
+
     workbuddy.url = "github:YeFaDa/workbuddy-nix";
     workbuddy.inputs.nixpkgs.follows = "nixpkgs";
+
+    umbriel.url = "github:noctalia-dev/umbriel";
+    noctalia.url = "github:noctalia-dev/noctalia";
 
     ah.url = "github:z1-0/ah.sh";
     skills.url = "github:z1-0/skills-nix";
