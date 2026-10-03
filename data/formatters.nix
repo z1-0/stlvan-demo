@@ -1,5 +1,5 @@
 [
-  "alejandra"
+  "nixfmt"
   "prettier"
   "shfmt"
   "stylua"

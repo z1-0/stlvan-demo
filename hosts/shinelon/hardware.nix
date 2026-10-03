@@ -5,6 +5,7 @@ in
 {
   imports = [
     inputs.self.lib.rootTree.data.modules.nixosHardware.content
+    inputs.self.lib.rootTree.data.modules.intelHardware.content
     (nixos-hardware + "/common/cpu/intel/haswell")
     (nixos-hardware + "/common/gpu/nvidia/disable.nix")
     (nixos-hardware + "/common/pc/laptop")
