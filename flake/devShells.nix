@@ -36,10 +36,14 @@
             enable = true;
           })
           // {
-            statix.settings.config = "${pkgs.writeText "statix.toml" ''disabled = [ "unquoted_uri" ]''}";
+            statix = {
+              enable = true;
+              settings.config = "${pkgs.writeText "statix.toml" ''disabled = [ "repeated_keys" ]''}";
+            };
           };
         excludes = [
           "^secrets/"
+          "^modules/home/shared/AI/AGENTS\\.md$"
         ];
       };
     };
