@@ -5,10 +5,17 @@ in
 {
   users.groups.greeter.members = [ username ];
 
-  programs.noctalia = {
-    enable = true;
-    recommendedServices.enable = true;
-    systemd.enable = true;
+  hjem = {
+    extraModules = [
+      inputs.noctalia.hjemModules.default
+    ];
+
+    users.${username} = {
+      programs.noctalia = {
+        enable = true;
+        # settings = { };
+      };
+    };
   };
 
   services.displayManager.noctalia-greeter = {

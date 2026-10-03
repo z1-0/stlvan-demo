@@ -1,8 +1,4 @@
-{
-  inputs,
-  pkgs,
-  ...
-}:
+{ inputs, pkgs, ... }:
 let
   username = inputs.self.lib.rootTree.data.profile.content.name;
 in
@@ -49,5 +45,9 @@ in
     "networkmanager"
   ];
 
-  services.envfs.enable = true;
+  services = {
+    envfs.enable = true;
+    power-profiles-daemon.enable = true;
+    upower.enable = true;
+  };
 }
