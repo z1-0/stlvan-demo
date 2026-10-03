@@ -9,7 +9,6 @@ in
     (nixos-hardware + "/common/cpu/intel/haswell")
     (nixos-hardware + "/common/gpu/nvidia/disable.nix")
     (nixos-hardware + "/common/pc/laptop")
-    (nixos-hardware + "/common/pc/laptop/hdd")
     (nixos-hardware + "/common/pc/ssd")
   ];
 
@@ -17,7 +16,6 @@ in
     kernelParams = [
       "acpi_osi=Linux"
       "preempt=full"
-      "video.use_native_backlight=1"
     ];
     initrd.availableKernelModules = [
       "rtsx_pci_sdmmc"
