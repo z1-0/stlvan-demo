@@ -28,11 +28,13 @@
 
       extra-substituters = [
         "https://nix-community.cachix.org"
+        "https://noctalia.cachix.org"
         "https://z1-0.cachix.org"
       ];
 
       extra-trusted-public-keys = [
         "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+        "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4="
         "z1-0.cachix.org-1:FS7lPgL0StRBOPrlu0RgdCL7LafUI23+U6Iivdw5QK8="
       ];
 

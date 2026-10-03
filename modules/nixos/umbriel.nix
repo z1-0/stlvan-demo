@@ -4,9 +4,7 @@ let
 in
 {
   hjem = {
-    extraModules = [
-      inputs.umbriel.hjemModules.default
-    ];
+    extraModules = [ inputs.umbriel.hjemModules.default ];
 
     users.${username} = {
       programs.umbriel = {
