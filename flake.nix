@@ -15,6 +15,9 @@
     nur.url = "github:nix-community/NUR";
     nur.inputs.nixpkgs.follows = "nixpkgs";
 
+    hjem.url = "github:feel-co/hjem";
+    hjem.inputs.nixpkgs.follows = "nixpkgs";
+
     treefmt-nix.url = "github:numtide/treefmt-nix";
     treefmt-nix.inputs.nixpkgs.follows = "nixpkgs";
 

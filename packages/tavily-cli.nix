@@ -2,7 +2,8 @@
   lib,
   python3Packages,
   fetchurl,
-}: let
+}:
+let
   tavily-python = python3Packages.buildPythonPackage rec {
     pname = "tavily-python";
     version = "0.7.26";
@@ -19,7 +20,7 @@
       httpx
     ];
 
-    pythonImportsCheck = ["tavily"];
+    pythonImportsCheck = [ "tavily" ];
     doCheck = false;
 
     meta = with lib; {
@@ -27,7 +28,7 @@
       homepage = "https://github.com/tavily-ai/tavily-python";
       license = licenses.mit;
       platforms = platforms.all;
-      maintainers = [];
+      maintainers = [ ];
     };
   };
 
@@ -51,7 +52,7 @@
       certifi
     ];
 
-    pythonImportsCheck = ["tavily_cli"];
+    pythonImportsCheck = [ "tavily_cli" ];
     doCheck = false;
 
     meta = with lib; {
@@ -60,8 +61,8 @@
       license = licenses.mit;
       mainProgram = "tvly";
       platforms = platforms.all;
-      maintainers = [];
+      maintainers = [ ];
     };
   };
 in
-  tavily-cli
+tavily-cli
