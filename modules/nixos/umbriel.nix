@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ inputs, pkgs, ... }:
 let
   username = inputs.self.lib.rootTree.data.profile.content.name;
 in
@@ -9,6 +9,7 @@ in
     users.${username} = {
       programs.umbriel = {
         enable = true;
+        package = pkgs.umbriel;
 
         settings = {
           general.autostart = [ "noctalia" ];
@@ -16,7 +17,4 @@ in
       };
     };
   };
-
-  virtualisation.vmVariant.systemd.user.services.umbriel.environment.WLR_RENDERER_ALLOW_SOFTWARE =
-    "1";
 }

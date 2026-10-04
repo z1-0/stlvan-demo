@@ -28,7 +28,10 @@
     workbuddy.inputs.nixpkgs.follows = "nixpkgs";
 
     umbriel.url = "github:noctalia-dev/umbriel";
+    umbriel.inputs.nixpkgs.follows = "nixpkgs";
+
     noctalia.url = "github:noctalia-dev/noctalia";
+    noctalia.inputs.nixpkgs.follows = "nixpkgs";
 
     ah.url = "github:z1-0/ah.sh";
     skills.url = "github:z1-0/skills-nix";
