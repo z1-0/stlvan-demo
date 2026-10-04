@@ -5,3 +5,5 @@
 .workbuddy
 
 result/
+
+*.qcow2
