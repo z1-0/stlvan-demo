@@ -1,7 +1,5 @@
-{ lib, pkgs, ... }:
+{ pkgs, ... }:
 {
-  system.stateVersion = lib.versions.majorMinor lib.version;
-
   time.timeZone = "Asia/Shanghai";
 
   environment = {
